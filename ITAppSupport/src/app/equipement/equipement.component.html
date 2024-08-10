@@ -1,0 +1,21 @@
+<div class="equipment-container">
+  <ng-container *ngIf="equipement$ | async as list;else failure"></ng-container>
+  <div class="equipment-details" *ngFor="let e of equipement$| async">
+    <mat-card class="custom-card">
+      <mat-card-header>
+        <mat-card-title class="custom-title">Équipement : {{ e.nom }}</mat-card-title>
+        <mat-card-subtitle class="custom-subtitle">ID : {{ e.id_equipement }}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content class="custom-content">
+        <p><strong>Type :</strong> {{ e.type }}</p>
+        <p><strong>Marque :</strong> {{ e.marque }}</p>
+        <p><strong>État :</strong> {{ e.etats }}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <ng-template #failure class="text-bg-danger">
+    {{errorMessage}}
+  </ng-template>
+
+</div>
+
