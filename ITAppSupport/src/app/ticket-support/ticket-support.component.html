@@ -1,0 +1,27 @@
+<form [formGroup]="ticketForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="description">Description:</label>
+    <input id="description" formControlName="description" type="text" />
+  </div>
+
+  <div>
+    <label for="date_creation">Date de Création:</label>
+    <input id="date_creation" formControlName="date_creation" type="date" />
+  </div>
+
+  <div>
+    <label for="statut">Statut:</label>
+    <select id="statut" formControlName="statut">
+      <option *ngFor="let statut of statuts" [value]="statut">{{ statut }}</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="id_equipement">Équipement:</label>
+    <select id="id_equipement" formControlName="id_equipement">
+      <option *ngFor="let equipement of equipements" [value]="equipement.id_equipement">{{ equipement.nom }}</option>
+    </select>
+  </div>
+
+  <button type="submit">Créer Ticket</button>
+</form>
