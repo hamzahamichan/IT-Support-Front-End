@@ -1,0 +1,47 @@
+/* home.component.css */
+.home-container {
+  text-align: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+z-index:999;
+}
+
+header {
+  background-color: #007bff;
+  color: white;
+  padding: 20px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5em;
+}
+
+section.services {
+  padding: 20px;
+  background-color: #f8f9fa;
+}
+
+.service {
+  margin: 20px 0;
+}
+
+.cta {
+  margin: 20px 0;
+}
+
+.cta button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+footer {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f1f1f1;
+}
