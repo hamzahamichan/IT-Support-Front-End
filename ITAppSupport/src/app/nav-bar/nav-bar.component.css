@@ -1,26 +1,44 @@
-mat-toolbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
+.toolbar {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  background-color: #3f51b5;
 }
 
 .app-name {
-  font-size: 20px;
+  font-size: 1.5em;
+  color: white;
   font-weight: bold;
 }
 
 .spacer {
-  flex: 1 1 auto;
+  flex: 1;
 }
 
-nav a {
-  margin-right: 15px;
-  text-decoration: none;
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links a {
   color: white;
+  font-size: 14px;
+  margin: 0 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.nav-links a.mat-button {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links a mat-icon {
+  margin-right: 8px;
 }
 
 .active-link {
-  border-bottom: 2px solid #ffeb3b; /* Ligne jaune sous le lien actif */
+  border-bottom: 2px solid #ffeb3b;
 }

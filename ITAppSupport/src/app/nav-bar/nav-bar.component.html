@@ -1,14 +1,26 @@
-<mat-toolbar color="primary">
+<mat-toolbar color="primary" class="toolbar">
   <mat-toolbar-row>
-    <span class="app-name">IT Service Dashboard</span>
+    <span class="app-name">TechSolutions</span>
     <span class="spacer"></span>
-    <nav>
-      <a mat-button routerLink="/home" routerLinkActive="active-link">Acceuil</a>
-      <a mat-button routerLink="/admin/equipementList" routerLinkActive="active-link">Equipements</a>
-      <a mat-button routerLink="/admin/ticket" routerLinkActive="active-link">Tickets</a>
-      <a mat-button routerLink="/admin/users" routerLinkActive="active-link">Utilisateurs</a>
-      <a mat-button routerLink="/ticket" routerLinkActive="active-link">Profil</a>
-      <a mat-button routerLink="/login">connexion</a>
+    <nav class="nav-links">
+      <a mat-button routerLink="home" routerLinkActive="active-link" aria-label="Accueil">
+        <mat-icon>home</mat-icon> Accueil
+      </a>
+      <a mat-button routerLink="equipementList" routerLinkActive="active-link" aria-label="Equipements">
+        <mat-icon>devices</mat-icon> Equipements
+      </a>
+      <a mat-button routerLink="ticket" routerLinkActive="active-link" aria-label="Tickets">
+        <mat-icon>support_agent</mat-icon> Tickets
+      </a>
+      <a mat-button routerLink="newEquipement" routerLinkActive="active-link" aria-label="Utilisateurs">
+        <mat-icon>people</mat-icon> Utilisateurs
+      </a>
+      <a mat-button routerLink="profile" routerLinkActive="active-link" aria-label="Profil">
+        <mat-icon>account_circle</mat-icon> Profil
+      </a>
+      <a mat-button routerLink="login" aria-label="Connexion">
+        <mat-icon>login</mat-icon> Connexion
+      </a>
     </nav>
   </mat-toolbar-row>
 </mat-toolbar>

@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { EquipementComponent } from './equipement/equipement.component';
+import { EquipementComponent } from './Equipement gestion/equipement/equipement.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import {HttpClientModule} from "@angular/common/http";
 import {ReactiveFormsModule} from "@angular/forms";
@@ -18,6 +18,10 @@ import {MatToolbarModule} from "@angular/material/toolbar";
 import { LoginComponent } from './login/login.component';
 import { AdminTemplateComponent } from './admin-template/admin-template.component';
 import { HomeComponent } from './home/home.component';
+import { DeleteEquiComponent } from './delete-equi/delete-equi.component';
+import { AjouterEquipementComponent } from './ajouter-equipement/ajouter-equipement.component';
+import { PannesComponent } from './pannes/pannes.component';
+import {MatIconModule} from "@angular/material/icon";
 
 @NgModule({
   declarations: [
@@ -27,23 +31,27 @@ import { HomeComponent } from './home/home.component';
     TicketSupportComponent,
     LoginComponent,
     AdminTemplateComponent,
-    HomeComponent
+    HomeComponent,
+    DeleteEquiComponent,
+    AjouterEquipementComponent,
+    PannesComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    ReactiveFormsModule,
-    BrowserAnimationsModule,
-    MatCardModule,
-    MatInputModule,
-    MatOptionModule,
-    MatSelectModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    MatToolbarModule
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        ReactiveFormsModule,
+        BrowserAnimationsModule,
+        MatCardModule,
+        MatInputModule,
+        MatOptionModule,
+        MatSelectModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
+        MatToolbarModule,
+        MatIconModule
 
-  ],
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -1,11 +1,11 @@
 import {Ticket} from "./Ticket.model";
+import {Panne} from "./panne.model";
 
 export  interface TicketSupport{
- id_ticket:number;
- description:String;
-date_creation: Date ;
-Etat:Ticket;
-id_panne?: number;  // Référence à une panne
-id_equipement ?: number;
+  description: string;
+  date_creation: Date;
+  etat: Ticket;
+  id_equipement: number;
+  panne: Panne;
 
 }

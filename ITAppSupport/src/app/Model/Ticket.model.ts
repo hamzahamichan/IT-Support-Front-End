@@ -1,5 +1,5 @@
 export enum Ticket{
-  envoyee = 'envoyee',
   EnCours= 'EnCours',
-  traitee = 'traitee'
+  traitee = 'traitee',
+  Envoyee='envoyee'
 }

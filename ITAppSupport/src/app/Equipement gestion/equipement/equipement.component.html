@@ -2,16 +2,37 @@
   .equipment-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between; /* Ajuste l'espace entre les éléments */
     padding: 20px;
     background-color: #f4f7f9;
+    margin-top: 2em;
+  }
 
-    margin-top: 10em;
+  .new-equipement-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start; /* Aligne le bouton à gauche */
+    margin-bottom: 20px; /* Ajoute un espace en dessous du bouton */
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #ffffff;
+    background-color: #4caf50;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn:hover {
+    background-color: #45a049;
   }
 
   .equipment-details {
     margin: 10px;
-    flex: 1 1 calc(33% - 20px);
+    flex: 1 1 calc(32% - 20px); /* Ajuste la taille pour trois cartes par ligne */
     box-sizing: border-box;
   }
 
@@ -47,6 +68,21 @@
     color: #3f51b5;
   }
 
+  .btn-danger {
+    padding: 5px 10px;
+    font-size: 1em;
+    color: #ffffff;
+    background-color: #ff1744;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn-danger:hover {
+    background-color: #e60000;
+  }
+
   .text-bg-danger {
     color: white;
     background-color: #ff1744;
@@ -58,12 +94,16 @@
 
   @media (max-width: 768px) {
     .equipment-details {
-      flex: 1 1 100%;
+      flex: 1 1 100%; /* Une carte par ligne sur les petits écrans */
     }
   }
 </style>
 
 <div class="equipment-container">
+  <div class="new-equipement-container">
+    <button class="btn" routerLink="/newEquipement">Nouveau</button>
+  </div>
+
   <ng-container *ngIf="equipement$ | async as list; else failure"></ng-container>
   <div class="equipment-details" *ngFor="let e of equipement$ | async">
     <mat-card class="custom-card">
@@ -75,9 +115,13 @@
         <p><strong>Type :</strong> {{ e.type }}</p>
         <p><strong>Marque :</strong> {{ e.marque }}</p>
         <p><strong>État :</strong> {{ e.etats }}</p>
+        <div id="DD">
+          <button class="btn-danger" id="btn" (click)="deleteEquipement(e.id_equipement)">Supprimer</button>
+        </div>
       </mat-card-content>
     </mat-card>
   </div>
+
   <ng-template #failure class="text-bg-danger">
     {{errorMessage}}
   </ng-template>
