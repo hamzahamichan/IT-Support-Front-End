@@ -1,0 +1,43 @@
+<form [formGroup]="equipementForm" (ngSubmit)="onSubmit()" id="form">
+  <mat-form-field appearance="fill">
+    <mat-label>ID Équipement</mat-label>
+    <input matInput formControlName="id_equipement" type="number" placeholder="Entrez l'ID de l'équipement" />
+    <mat-error *ngIf="equipementForm.get('id_equipement')?.hasError('required')">
+      ID Équipement est requis.
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Nom</mat-label>
+    <input matInput formControlName="nom" placeholder="Entrez le nom de l'équipement" />
+    <mat-error *ngIf="equipementForm.get('nom')?.hasError('required')">
+      Nom est requis.
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Type</mat-label>
+    <input matInput formControlName="type" placeholder="Entrez le type de l'équipement" />
+    <mat-error *ngIf="equipementForm.get('type')?.hasError('required')">
+      Type est requis.
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Marque</mat-label>
+    <input matInput formControlName="marque" placeholder="Entrez la marque de l'équipement" />
+    <mat-error *ngIf="equipementForm.get('marque')?.hasError('required')">
+      Marque est requise.
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>État</mat-label>
+    <input matInput formControlName="etats" placeholder="Entrez l'état de l'équipement" />
+    <mat-error *ngIf="equipementForm.get('etats')?.hasError('required')">
+      État est requis.
+    </mat-error>
+  </mat-form-field>
+
+  <button mat-raised-button color="warn" type="submit" id="Button">Ajouter</button>
+</form>
