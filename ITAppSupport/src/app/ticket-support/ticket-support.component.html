@@ -1,18 +1,36 @@
 <form [formGroup]="ticketForm" (ngSubmit)="onSubmit()">
   <div>
     <label for="description">Description:</label>
-    <input id="description" formControlName="description" type="text" />
+    <select id="description" formControlName="description">
+      <option value="">Sélectionnez une description</option>
+      <optgroup label="Imprimantes">
+        <option value="imp_papier_coince">Papier coincé</option>
+        <option value="imp_plus_encre">Plus d'encre</option>
+        <option value="imp_bruit_anormal">"L'imprimante réseau ne répond plus et les documents restent en file d'attente. Le redémarrage de l'imprimante n'a pas résolu le problème.</option>
+      </optgroup>
+      <optgroup label="Ordinateurs">
+        <option value="pc_demarrage_impossible">L'écran de l'ordinateur portable présente des lignes verticales et un scintillement constant, rendant le travail difficile.</option>
+        <option value="pc_ecran_bleu">Le disque dur de l'ordinateur de bureau émet des bruits anormaux, et certaines données ne sont plus accessibles.</option>
+        <option value="pc_lent">L'ordinateur ne parvient pas à installer les dernières mises à jour Windows, avec un code d'erreur 0x80070057."</option>
+        <option value="pc_lent">"Le système est extrêmement lent, notamment lors de l'ouverture de fichiers et de la navigation sur le réseau interne."</option>
+      </optgroup>
+      <optgroup label="Équipements de bureau">
+        <option value="bureau_chaise_cassee">Chaise cassée</option>
+        <option value="bureau_lampe_grille">Lampe grillée</option>
+        <option value="bureau_climatisation_panne">Climatisation en panne</option>
+      </optgroup>
+    </select>
   </div>
 
   <div>
     <label for="date_creation">Date de Création:</label>
-    <input id="date_creation" formControlName="date_creation" type="date" />
+    <input id="date_creation" formControlName="date_creation" type="datetime-local" />
   </div>
 
   <div>
-    <label for="statut">Statut:</label>
-    <select id="statut" formControlName="statut">
-      <option *ngFor="let statut of statuts" [value]="statut">{{ statut }}</option>
+    <label for="etat">Statut:</label>
+    <select id="etat" formControlName="etat">
+      <option *ngFor="let etat of etat" [value]="etat">{{ etat }}</option>
     </select>
   </div>
 
@@ -23,5 +41,12 @@
     </select>
   </div>
 
-  <button type="submit">Créer Ticket</button>
+  <div>
+    <label for="panne">Panne:</label>
+    <select id="panne" formControlName="panne">
+      <option *ngFor="let panne of pannes" [value]="panne">{{ panne.description }}</option>
+    </select>
+  </div>
+
+  <button type="submit" class="btn btn-success">Créer Ticket</button>
 </form>
