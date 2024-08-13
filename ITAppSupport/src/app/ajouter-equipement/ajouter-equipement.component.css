@@ -1,0 +1,42 @@
+/* Style du formulaire */
+#form {
+  width:100%;
+  margin-top:10em;
+  max-width: 600px;
+  padding: 1rem;
+  margin-right: 20em;
+  border-radius: 10px;
+  background: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Style des champs de formulaire */
+mat-form-field {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+/* Style du bouton */
+button.mat-raised-button {
+  margin-top: 1rem;
+  width: 100%;
+  font-size: 1.1rem;
+}
+
+/* Style des labels et des erreurs */
+mat-form-field .mat-label {
+  font-family: Algerian;
+  color: #3f51b5; /* Couleur du label */
+}
+
+mat-form-field .mat-error {
+  color: #f44336; /* Couleur des messages d'erreur */
+}
+#Button{
+  border-color: darkorchid;
+  border-radius:20%;
+  color: #cccccc;
+  font-family: Algerian;
+  color: #3f51b5;
+
+}
